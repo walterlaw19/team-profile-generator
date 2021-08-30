@@ -13,10 +13,65 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+inquirer.prompt([
+    {
+        type: 'confirm',
+        name: 'newEmployee',
+        message: 'do you want to add a new employee?'
+    },
+    {
+        type: 'input',
+        name: 'EmployeeName',
+        message: 'what is the name of the new Employee?'
+    },
+    {
+
+    },
+    {
+        type: 'input',
+        name: 'role',
+        message: 'what is the role of the new employee?'
+    },
+    {
+        type: 'input',
+        name: 'officeNumber',
+        message: 'what is your office number?'
+    },
+    {
+        type: 'input',
+        name: 'gitHub',
+        message: 'what is your GitHub username?'
+    },
+    {
+        type: 'input',
+        name: 'school',
+        message: 'What school did you attend to?'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'what is the new employee email address'
+    },
+    {
+        type: 'input',
+        name: 'Id',
+        message: 'Please enter an ID number for the new employee'
+    }
+])
+
+
+
+
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
+
+.then((newEmployeeInfo) => {
+
+    const desiredInfo = gene
+})
+
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
