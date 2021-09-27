@@ -8,12 +8,32 @@ const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-const render = require("./lib/htmlRenderer");
+const render = require("./src/htmlRenderer");
 
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 inquirer.prompt([
+    {
+        type: 'input',
+        name: 'teamManagerName',
+        message: 'What is the name of the Team Manager'
+    },
+    {
+        type: 'input',
+        name: 'teamManagerId',
+        message: 'What is the ID of the Team Manager'
+    },
+    {
+        type: 'input',
+        name: 'teamManagerEmail',
+        message: 'What is the Email of the Team Manager'
+    },
+    {
+        type: 'input',
+        name: 'teamManagerOfficeNumber',
+        message: 'What is the Office Number of the Team Manager'
+    },
     {
         type: 'confirm',
         name: 'newEmployee',
@@ -24,9 +44,7 @@ inquirer.prompt([
         name: 'EmployeeName',
         message: 'what is the name of the new Employee?'
     },
-    {
 
-    },
     {
         type: 'input',
         name: 'role',
@@ -63,14 +81,13 @@ inquirer.prompt([
 
 
 
-// After the user has input all employees desired, call the `render` function (required
-// above) and pass in an array containing all employee objects; the `render` function will
-// generate and return a block of HTML including templated divs for each employee!
+    // After the user has input all employees desired, call the `render` function (required
+    // above) and pass in an array containing all employee objects; the `render` function will
+    // generate and return a block of HTML including templated divs for each employee!
 
-.then((newEmployeeInfo) => {
-
-    const desiredInfo = gene
-})
+    .then((newEmployeeInfo) => {
+        const newManager = new Manager(newEmployeeInfo.teamManageName, newEmployeeInfo.teamManageID, newEmployeeInfo.teamManageEmail, newEmployeeInfo.teamManageOfficeNumber);
+    })
 
 
 // After you have your html, you're now ready to create an HTML file using the HTML
