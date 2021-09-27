@@ -87,6 +87,7 @@ inquirer.prompt([
 
     .then((newEmployeeInfo) => {
         const newManager = new Manager(newEmployeeInfo.teamManageName, newEmployeeInfo.teamManageID, newEmployeeInfo.teamManageEmail, newEmployeeInfo.teamManageOfficeNumber);
+        
     })
 
 
